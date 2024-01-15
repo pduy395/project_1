@@ -14,4 +14,4 @@ The backend is a FastAPI application that provides a REST API for the frontend t
 
 ## Setup
 
-To set up the project, follow instructions in the README.md files in the `frontend` and `backend` directories.
+To set up the project
