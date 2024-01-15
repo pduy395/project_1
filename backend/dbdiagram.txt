@@ -1,0 +1,56 @@
+Table user {
+  id integer [primary key]
+  email varchar 
+  hash_password varchar
+  user_name varchar
+  age integer
+  gender integer
+}
+
+Table topic {
+  
+  topic_name varchar 
+  user_id integer
+  id integer [primary key]
+}
+
+Table vocabulary {
+  id integer [primary key]
+  word varchar
+  meaning varchar
+  type varchar
+  topic_id integer
+}
+
+Table test_result {
+  id integer [primary key]
+  user_id integer
+  total_question integer
+  result integer
+}
+
+Table vocabulary_user{
+  id integer [primary key]
+  user_id integer
+  vocabulary_id integer
+  priority integer
+}
+Table progress{
+  id integer [primary key]
+  user_id integer
+  topic_id integer
+  progress integer
+}
+
+ Ref: user.id <> topic.user_id // many-to-one
+
+ Ref: vocabulary.topic_id > topic.id
+
+ Ref: test_result.user_id > user.id
+
+ Ref: vocabulary_user.user_id > user.id
+ Ref: vocabulary_user.vocabulary_id > vocabulary.id
+
+ Ref: progress.user_id > user.id
+ Ref: progress.topic_id > topic.id
+
